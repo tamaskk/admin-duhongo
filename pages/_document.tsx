@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { Toaster } from 'sonner'
 
 export default function Document() {
   return (

@@ -12,19 +12,19 @@ export const authOptions: AuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "email" },
+        userName: { label: "User Name", type: "userName" },
         password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
-        if (!credentials?.email || !credentials.password) {
+        if (!credentials?.userName || !credentials.password) {
           throw new Error("Email and password are required.");
         }
 
         const client = await connectToDatabase();
-        const adminsCollection = client.db().collection("admins");
+        const adminsCollection = client.db().collection("users");
 
         // Find user by email
-        const admin = await adminsCollection.findOne({ email: credentials.email });
+        const admin = await adminsCollection.findOne({ userName: credentials.userName });
 
         if (!admin) {
           client.close();

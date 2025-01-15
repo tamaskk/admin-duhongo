@@ -5,7 +5,12 @@ import {
 import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-  
+import CrisisAlertIcon from '@mui/icons-material/CrisisAlert';
+import CollectionsIcon from '@mui/icons-material/Collections';
+import DomainIcon from '@mui/icons-material/Domain';
+import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
+
   const Nav = () => {
     const router = useRouter();
   
@@ -15,7 +20,11 @@ import { useRouter } from "next/router";
   
      const menus: any = [
       { name: "Főoldal", icon: <HomeIcon />, link: "/dashboard" },
-      { name: "GYIK", icon: <HelpIcon />, link: "/dashboard/faq" },
+      { name: "Galéria", icon: <CollectionsIcon />, link: "/dashboard/gallery" },
+      { name: "Fő oldal képek", icon: <DomainIcon />, link: "/dashboard/homepage" },
+      { name: "Bemutató Galéria", icon: <InsertPhotoIcon />, link: "/dashboard/presentation" },
+      { name: "Akciók", icon: <CrisisAlertIcon />, link: "/dashboard/actions" },
+      { name: "GYIK", icon: <QuestionMarkIcon />, link: "/dashboard/faq" },
      ];
   
   

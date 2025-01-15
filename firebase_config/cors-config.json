@@ -1,0 +1,13 @@
+[
+  {
+      "maxAgeSeconds": 3600,
+      "method": ["GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS"],
+      "origin": [
+          "http://localhost:3000",
+          "https://aduhongotata.vercel.app",
+          "https://aduhongotata.com",
+          "https://admin-duhongo.vercel.app"
+      ],
+      "responseHeader": ["Content-Type"]
+  }
+]

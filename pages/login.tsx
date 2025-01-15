@@ -1,5 +1,4 @@
 import LoginComponent from "@/components/login";
-import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 
 const Login = () => {
@@ -9,9 +8,7 @@ const Login = () => {
         <title>Admin Eliteperformance</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SessionProvider>
         <LoginComponent />
-      </SessionProvider>
     </div>
   );
 };

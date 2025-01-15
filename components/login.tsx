@@ -10,13 +10,13 @@ const LoginComponent = () => {
 
   const { data: session, status } = useSession();
 
-//   useEffect(() => {
-//     if (status === "loading") return;
+  useEffect(() => {
+    if (status === "loading") return;
     
-//     if (session) {
-//       router.push('/blog-posts')
-//     }
-//   }, [session, status, router])
+    if (session) {
+      router.push('/dashboard')
+    }
+  }, [session, status, router])
 
   const loginHandler = async () => {
     if (userData.userName === "" || userData.password === "") {
@@ -28,9 +28,9 @@ const LoginComponent = () => {
       setLoading(true);
       const result = await signIn("credentials", {
         redirect: false,
-        email: userData.userName,
+        userName: userData.userName,
         password: userData.password,
-        callbackUrl: "/blog-posts",
+        callbackUrl: "/",
       });
 
       if (result?.error) {
@@ -40,7 +40,7 @@ const LoginComponent = () => {
       }
 
       setLoading(false);
-      router.push("/blog-posts");
+      router.push("/dashboard");
     } catch (error) {
       console.error('Login failed:', error);
     }

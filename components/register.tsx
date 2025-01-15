@@ -10,13 +10,13 @@ const RegisterComponent = () => {
 
   const { data: session, status } = useSession();
 
-//   useEffect(() => {
-//     if (status === "loading") return;
+  useEffect(() => {
+    if (status === "loading") return;
     
-//     if (session) {
-//       router.push('/blog-posts')
-//     }
-//   }, [session, status, router])
+    if (session) {
+      router.push("/dashboard")
+    }
+  }, [session, status, router])
 
   const loginHandler = async () => {
     if (userData.userName === "" || userData.password === "") {
@@ -26,12 +26,16 @@ const RegisterComponent = () => {
 
     try {
       setLoading(true);
-      const result = await signIn("credentials", {
-        redirect: false,
-        email: userData.userName,
-        password: userData.password,
-        callbackUrl: "/blog-posts",
+
+      const registerResponse = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
       });
+
+      const result = await registerResponse.json();
 
       if (result?.error) {
         alert(result.error);
@@ -40,7 +44,6 @@ const RegisterComponent = () => {
       }
 
       setLoading(false);
-      router.push("/blog-posts");
     } catch (error) {
       console.error('Login failed:', error);
     }
@@ -110,7 +113,7 @@ const RegisterComponent = () => {
           className="w-full py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300"
           disabled={loading}
         >
-          {loading ? "Bejelentkezés..." : "Bejelentkezés"}
+          {loading ? "Regisztrálás..." : "Regisztráció"}
         </button>
       </div>
     </div>

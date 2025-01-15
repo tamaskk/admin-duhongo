@@ -9,15 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.5",
-    "@emotion/styled": "^11.13.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.1.10",
+    "@mui/material": "^6.2.0",
+    "@radix-ui/react-toast": "^1.2.4",
+    "@rc-component/color-picker": "^2.0.1",
     "bcryptjs": "^2.4.3",
+    "browser-image-compression": "^2.0.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "firebase": "^11.1.0",
+    "lucide-react": "^0.469.0",
     "mongodb": "^6.11.0",
     "next": "15.0.3",
     "next-auth": "^4.24.10",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "sonner": "^1.7.1",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7",
+    "toaster": "^0.1.2"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
